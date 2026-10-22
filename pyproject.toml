@@ -1,0 +1,45 @@
+[project]
+name = "repo-trust-score"
+version = "0.1.0"
+description = "Score a GitHub repo 0-100 for trust before you clone and run it."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Saurabh Yadav" }]
+maintainers = [{ name = "Saurabh Yadav" }]
+keywords = ["security", "supply-chain", "github", "cli", "trust", "audit", "osv"]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+]
+
+dependencies = [
+    "click>=8.1",
+    "requests>=2.31",
+    "rich>=13.0",
+    "tomli>=2.0; python_version < '3.11'",
+]
+
+[project.scripts]
+repo-trust-score = "repo_trust_score.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/repo_trust_score"]
+
+[tool.ruff]
+line-length = 100

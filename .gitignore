@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+.DS_Store
+.idea/
+.vscode/
+
+# Temporary helper scripts (not part of the project)
+check_readme.py
+fix_readme.py
+truncate_readme.py
+apply_author_patch.py
+build.sh
